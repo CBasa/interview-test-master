@@ -1,0 +1,23 @@
+Steps:
+1. Complete BusyFlightsResponse class attributes
+2. Create clients for the two suppliers Crazy Air and Tough Jet
+3. Create service to retrieve flights from each supplier and then aggregate results
+    - use try/catch block when retrieving flights from each supplier
+    -
+4. Convert BusyFlight request to respective requests for each supplier to retrieve flights from each one
+5. Map responses from each supplier to BusyFlights Response format with new converter classes
+	Main differences:
+		Crazy Air:
+			- cabinclass attribute not required
+			- convert ISO_LOCAL_DATE_TIME('2011-12-03T10:15:30') to ISO_DATE_TIME('2011-12-03T10:15:30+01:00[Europe/Paris]')
+		Tough Jet:
+			- fare needs to be calculated based on basePrice*(1-(discount/100))*(1 + (tax / 100.00)) (discount is in percentage, assuming tax is also percentage)
+			- convert ISO_INSTANT('2011-12-03T10:15:30Z') to ISO_DATE_TIME('2011-12-03T10:15:30+01:00[Europe/Paris]')
+		Both:
+			- need to specify value for supplier attribute in BusyFLights response to show if from Tough Jet or Crazy Air
+6. Collect into one list and order by fare
+8. Return final ordered list
+
+9. Create mock responses for CrazyAirClient and ToughJetClient
+10. Add field validations for request/response models
+11. Create Postman collection
