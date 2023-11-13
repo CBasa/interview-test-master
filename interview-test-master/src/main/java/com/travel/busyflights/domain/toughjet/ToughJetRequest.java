@@ -1,5 +1,10 @@
 package com.travel.busyflights.domain.toughjet;
 
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
 public class ToughJetRequest {
 
     private String from;
